@@ -761,7 +761,13 @@ export function Prompt(props: PromptProps) {
             flexGrow={1}
           >
             <textarea
-              placeholder={props.sessionID ? undefined : `Ask anything... "${PLACEHOLDERS[store.placeholder]}"`}
+              placeholder={
+                props.sessionID
+                  ? undefined
+                  : store.mode === "shell"
+                    ? `Enter shell command..."`
+                    : `Ask anything... "${PLACEHOLDERS[store.placeholder]}"`
+              }
               textColor={keybind.leader ? theme.textMuted : theme.text}
               focusedTextColor={keybind.leader ? theme.textMuted : theme.text}
               minHeight={1}
