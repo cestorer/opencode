@@ -765,7 +765,7 @@ export function Prompt(props: PromptProps) {
                 props.sessionID
                   ? undefined
                   : store.mode === "shell"
-                    ? `Enter shell command..."`
+                    ? "Enter shell command..."
                     : `Ask anything... "${PLACEHOLDERS[store.placeholder]}"`
               }
               textColor={keybind.leader ? theme.textMuted : theme.text}
